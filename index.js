@@ -115,23 +115,22 @@ function returnResponse(url, response)
 	response.write("</head>");
 
 	response.write("<body style='background: #000;'>");
-	antie.getDeviceBody(device_configuration_decoded);
+		antie.getDeviceBody(device_configuration_decoded);
 
-	response.write("<div id='static-loading-screen' style='position: absolute; width: 100%; height: 100%; background: #000;'>");
-	response.write("Application is loading...");
-	response.write("</div>");
+		response.write("<div id='static-loading-screen' style='position: absolute; width: 100%; height: 100%; background: #000;'>");
+		response.write("Application is loading...");
+		response.write("</div>");
 
-	response.write("<div id=\"app\" class=\"display-none\"><\/div>");
+		response.write("<div id=\"app\" class=\"display-none\"><\/div>");
 
-	response.write("<script type='text/javascript'>");
-	response.write("require(");
-	response.write("[");
-			response.write("'sampleapp/appui/sampleapp'");
-	response.write("],");
+		response.write("<script type='text/javascript'>");
+			response.write("require(");
+			response.write("[");
+					response.write("'sampleapp/appui/sampleapp'");
+			response.write("],");
 
-			response.write("function(SampleApp) {");
-					response.write("require.ready(function() {");
-						response.write("function onReady() {");
+				response.write("function(SampleApp) {");
+						response.write("var onReady = function() {");
 							response.write("var staticLoadingScreen = document.getElementById('static-loading-screen');");
 							response.write("staticLoadingScreen.parentNode.removeChild(staticLoadingScreen);");
 						response.write("};");
@@ -142,11 +141,10 @@ function returnResponse(url, response)
 								response.write("'static/img/',");
 								response.write("onReady");
 						response.write(");");
-					response.write("});");
-				response.write("}");
-		response.write(");");
-	response.write("</script>");
-	response.write("</body>");
+					response.write("}");
+				response.write(");");
+			response.write("</script>");
+		response.write("</body>");
 	response.write("</html>");
 }
 

@@ -13,7 +13,9 @@ require.def("sampleapp/appui/components/simple",
 
                 self = this;
                 // It is important to call the constructor of the superclass
-                this._super("simplecomponent");
+                // this._super("simplecomponent");
+                this.init.base.call(this, "simplecomponent");
+
                 
                 // Hello World
                 label = new Label("Hello World");

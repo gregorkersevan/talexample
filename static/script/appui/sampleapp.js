@@ -10,7 +10,8 @@ require.def('sampleapp/appui/sampleapp',
                 var self;
                 self = this;
                 
-                self._super(appDiv, styleDir, imgDir, callback);
+                // self._super(appDiv, styleDir, imgDir, callback);
+                this.init.base.call(this, appDiv, styleDir, imgDir, callback);
                 
                 // Sets the root widget of the application to be
                 // an empty container
